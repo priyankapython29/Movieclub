@@ -1,0 +1,3 @@
+class Moviepriceplan < ApplicationRecord
+    
+end

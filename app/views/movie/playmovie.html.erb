@@ -1,0 +1,242 @@
+<!-- header -->
+<header class="header">
+	<div class="header__wrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="header__content">
+						<!-- header logo -->
+						<a href="/home" class="header__logo">
+							<img src=<%= asset_path "icon/MovieClub-White.png" %> alt="">
+						</a>
+						<!-- end header logo -->
+
+						<!-- header nav -->
+						<ul class="header__nav">
+							<!-- dropdown -->
+							<li class="header__nav-item">
+								<a class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuHome" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
+
+							<!--<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuHome">
+									
+									<li><a href="home/index">Home static bg</a></li><!--<li><a href="index.html">Home slideshow bg</a></li>-->
+									<!--<li><a href="home/index2">Home static bg</a></li>	
+								</ul>-->	
+							</li>
+							<!-- end dropdown -->
+
+							<!-- dropdown -->
+							<li class="header__nav-item">
+								<a class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuCatalog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Movie</a>
+
+								<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuCatalog">
+									<li><a href="/animation">Animation </a></li>
+									<li><a href="/hindi">Hindi</a></li>
+									<li><a href="/english">English</a></li>
+									<li><a href="/romantic">Romantic</a></li>
+									<li><a href="/sports">Sports</a></li>
+									
+
+								</ul>
+							</li>
+							<!-- end dropdown -->
+
+						<!--	<li class="header__nav-item">
+								<a href="pricing.html" class="header__nav-link">Top Rated Movie</a>
+							</li>-->
+
+							<li class="header__nav-item">
+								<a href="/pricing" class="header__nav-link">pricing plan</a>
+							</li>
+
+						<!--	<li class="header__nav-item">
+								<a href="user/signin.html" class="header__nav-link">Login</a>
+							</li>-->
+							<li class="header__nav-item">
+								<a href="contact.html" class="header__nav-link">Contact</a>
+							</li>
+							
+							
+
+							<!-- dropdown -->
+							<li class="dropdown header__nav-item">
+								<a class="dropdown-toggle header__nav-link header__nav-link--more" href="#" role="button" id="dropdownMenuMore" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								   <!--<i class="icon ion-ios-more"></i>-->
+								   <img src=<%= asset_path "icon/icons8-more-24.png" %> alt="">
+								</a>
+
+								<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuMore">
+									<li><a href="about.html">About</a></li>
+									
+									<li><a href="/signup">Sign Up</a></li>
+									<!--<li><a href="404.html">404 Page</a></li>-->
+								</ul>
+							</li>
+							<!-- end dropdown -->
+						</ul>
+						<!-- end header nav -->
+
+						<!-- header auth -->
+						<div class="header__auth">
+							<button class="header__search-btn" type="button">
+								<!--<i class="icon ion-ios-search"></i>-->
+								<img src=<%= asset_path "icon/icons8-search-30.png" %> alt="">
+							</button>
+							
+						<!--  <%= link_to "sign in", signin_path, class:"header__sign-in" %>--> 
+						   
+						   
+
+						<a href="signin.html" class="header__sign-in">
+								<i class="icon ion-ios-log-in"></i>
+								<span>sign in</span>
+							</a>
+						</div>
+						<!-- end header auth -->
+
+						<!-- header menu btn -->
+						<button class="header__btn" type="button">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+						<!-- end header menu btn -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- header search -->
+	<form action="#" class="header__search">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="header__search-content">
+						<input type="text" placeholder="Search for a movie that you are looking for">
+
+						<button type="button">search</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+	<!-- end header search -->
+</header>
+<!-- end header -->
+
+	<!-- details -->
+	<section class="section details">
+		<!-- details background -->
+		<div class="details__bg" data-bg="img/home/home__bg.jpg"></div>
+		<!-- end details background -->
+
+		<!-- details content -->
+		<div class="container">
+			<div class="row">
+				<!-- title -->
+				<div class="col-12">
+					<h1 class="details__title"><%= @movie.moviename %></h1>
+				</div>
+				<!-- end title -->
+
+				<!-- content -->
+				<div class="col-12 col-xl-6">
+					<div class="card card--details">
+						<div class="row">
+							<!-- card cover -->
+							<div class="col-12 col-sm-4 col-md-4 col-lg-3 col-xl-5">
+								<div class="card__cover">
+									<img src=<%= @movie.movieimage %> alt="">
+								</div>
+							</div>
+							<!-- end card cover -->
+
+							<!-- card content -->
+							<div class="col-12 col-sm-8 col-md-8 col-lg-9 col-xl-7">
+								<div class="card__content">
+									<div class="card__wrap">
+										<span class="card__rate">
+											<img src=<%= asset_path "icon/icons8-star-filled-24.png" %> alt="">
+											<%= @movie.rating %></span>
+
+										<ul class="card__list">
+											<li><%= @movie.quality %></li>
+										<!--	<li>16+</li>-->
+										</ul>
+									</div>
+
+									<ul class="card__meta">
+									<!--	<li><span>Genre:</span> <a href="#">Action</a>
+										<a href="#">Triler</a></li>-->
+										<li><span>Release year:</span><%= @movie.yearofrelease %></li>
+										<li><span>Running time:</span><%= @movie.timehours %></li>
+										<li><span>Category:</span><%= @movie.category %></li>
+									</ul>
+
+								<!--	<div class="card__description card__description--details">
+										It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
+									</div>-->
+								</div>
+							</div>
+							<!-- end card content -->
+						</div>
+					</div>
+				</div>
+				<!-- end content -->
+
+				<!-- player -->
+				<div class="col-12 col-xl-6">
+					<video controls crossorigin playsinline poster="../../../cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg" id="player" autoplay>
+						<!-- Video files -->
+					<!--<source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4" size="576">
+						<source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" type="video/mp4" size="720">
+						<source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4" type="video/mp4" size="1080">-->	
+						<source src="<%= @movie.link %>" type="video/mp4" size="1440">
+
+						<!-- Caption files -->
+						<track kind="captions" label="English" srclang="en" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt"
+						    default>
+						<track kind="captions" label="Français" srclang="fr" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.fr.vtt">
+
+						<!-- Fallback for browsers that don't support the <video> element -->
+						<a href="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" download>Download</a>
+					</video>
+				</div>
+				<!-- end player -->
+
+				<div class="col-12">
+					<div class="details__wrap">
+						<!-- availables -->
+						<div class="details__devices">
+							<span class="details__devices-title">Available on devices:</span>
+							<ul class="details__devices-list">
+								<li><img src=<%= asset_path "icon/icons8-apple-logo-24.png" %> alt=""><span>IOS</span></li>
+								<li><img src=<%= asset_path "icon/icons8-android-os-24.png" %> alt=""><span>Android</span></li>
+								<li><img src=<%= asset_path "icon/icons8-windows-10-30.png" %> alt=""><span>Windows</span></li>
+								<li><img src=<%= asset_path "icon/icons8-tv-24.png" %> alt=""><span>Smart TV</span></li>
+							</ul>
+						</div>
+						<!-- end availables -->
+
+						<!-- share -->
+						<div class="details__share">
+							<span class="details__share-title">Share with friends:</span>
+
+							<ul class="details__share-list">
+								<li class="facebook"><a href="#"><img src=<%= asset_path "icon/icons8-facebook-48.png" %> alt=""></i></a></li>
+								<li class="instagram"><a href="#"><img src=<%= asset_path "icon/icons8-instagram-48.png" %> alt=""></i></a></li>
+								<li class="twitter"><a href="#"><img src=<%= asset_path "icon/icons8-twitter-30.png" %> alt=""></i></a></li>
+								
+							</ul>
+						</div>
+						<!-- end share -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end details content -->
+	</section>
+	<!-- end details -->
+
+			
